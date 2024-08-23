@@ -1,0 +1,107 @@
+# quote-generator<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор Вдохновляющих Цитат</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .quote {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Генератор Вдохновляющих Цитат</h1>
+        <button onclick="generateQuote()">Сгенерировать цитату</button>
+        <div class="quote" id="quote"></div>
+    </div>
+    <script>
+        const beginnings = [
+            "Всегда помни, что",
+            "Никогда не забывай, что",
+            "Каждый день напоминай себе, что",
+            "Сила в том, что",
+            "Вера в себя начинается с того, что",
+            "Успех приходит, когда",
+            "Главное помнить, что",
+            "В трудные времена важно понимать, что",
+            "Мир вокруг нас изменяется, когда"
+        ];
+
+        const middles = [
+            "сила внутри нас",
+            "всё начинается с первого шага",
+            "мы сами творцы своей судьбы",
+            "мы сильнее, чем думаем",
+            "каждая преграда — это возможность",
+            "каждый день — это новая возможность",
+            "мы можем изменить мир вокруг себя",
+            "наши мысли формируют реальность",
+            "мы способны на большее, чем думаем"
+        ];
+
+        const ends = [
+            "и это нужно помнить.",
+            "и это важно.",
+            "и это ключ к успеху.",
+            "и это самое главное.",
+            "и это вдохновляет на подвиги.",
+            "и это путь к счастью.",
+            "и это определяет наше будущее.",
+            "и это делает нас сильнее.",
+            "и это открывает новые горизонты."
+        ];
+
+        function generateQuote() {
+            const beginning = beginnings[Math.floor(Math.random() * beginnings.length)];
+            const middle = middles[Math.floor(Math.random() * middles.length)];
+            const end = ends[Math.floor(Math.random() * ends.length)];
+
+            const quote = `${beginning} ${middle}, ${end}`;
+            document.getElementById("quote").textContent = quote;
+        }
+    </script>
+</body>
+</html>
